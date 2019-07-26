@@ -15,6 +15,8 @@
 		0197905222EB1C200041A7BA /* FolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197905122EB1C200041A7BA /* FolderTableViewCell.swift */; };
 		0197905422EB1ED00041A7BA /* FolderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197905322EB1ED00041A7BA /* FolderTableViewController.swift */; };
 		0197905622EB29190041A7BA /* ImageGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197905522EB29190041A7BA /* ImageGalleryViewController.swift */; };
+		0197905822EB3C510041A7BA /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197905722EB3C510041A7BA /* ImageCollectionViewController.swift */; };
+		0197905A22EB3DFD0041A7BA /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197905922EB3DFD0041A7BA /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		0197905122EB1C200041A7BA /* FolderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderTableViewCell.swift; sourceTree = "<group>"; };
 		0197905322EB1ED00041A7BA /* FolderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderTableViewController.swift; sourceTree = "<group>"; };
 		0197905522EB29190041A7BA /* ImageGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryViewController.swift; sourceTree = "<group>"; };
+		0197905722EB3C510041A7BA /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
+		0197905922EB3DFD0041A7BA /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +67,11 @@
 				0197903F22EB19680041A7BA /* AppDelegate.swift */,
 				0197904122EB19680041A7BA /* ViewController.swift */,
 				0197905322EB1ED00041A7BA /* FolderTableViewController.swift */,
+				0197905722EB3C510041A7BA /* ImageCollectionViewController.swift */,
 				0197905122EB1C200041A7BA /* FolderTableViewCell.swift */,
 				0197905522EB29190041A7BA /* ImageGalleryViewController.swift */,
 				0197904322EB19680041A7BA /* Main.storyboard */,
+				0197905922EB3DFD0041A7BA /* ImageCollectionViewCell.swift */,
 				0197904622EB19690041A7BA /* Assets.xcassets */,
 				0197904822EB19690041A7BA /* LaunchScreen.storyboard */,
 				0197904B22EB19690041A7BA /* Info.plist */,
@@ -144,8 +150,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0197905822EB3C510041A7BA /* ImageCollectionViewController.swift in Sources */,
 				0197904222EB19680041A7BA /* ViewController.swift in Sources */,
 				0197905422EB1ED00041A7BA /* FolderTableViewController.swift in Sources */,
+				0197905A22EB3DFD0041A7BA /* ImageCollectionViewCell.swift in Sources */,
 				0197905622EB29190041A7BA /* ImageGalleryViewController.swift in Sources */,
 				0197904022EB19680041A7BA /* AppDelegate.swift in Sources */,
 				0197905222EB1C200041A7BA /* FolderTableViewCell.swift in Sources */,

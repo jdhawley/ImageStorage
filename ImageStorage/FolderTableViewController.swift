@@ -53,11 +53,17 @@ class FolderTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showImageGallery"{
+        let row = tableView.indexPathForSelectedRow?.row
+        
+        switch segue.identifier{
+        case "showImageGallery":
             let destination = segue.destination as! ImageGalleryViewController
-            let row = tableView.indexPathForSelectedRow?.row
-            
             destination.navigationItem.title = folders[row!]
+        case "showImageCollection":
+            let destination = segue.destination as! ImageCollectionViewController
+            destination.navigationItem.title = folders[row!] + " Gallery"
+        default:
+            return
         }
     }
 
