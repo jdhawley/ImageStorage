@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -149,11 +150,43 @@
                             <outlet property="delegate" destination="0X4-s7-2Gf" id="hmT-YH-mCM"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="FolderName" id="XsT-cx-e4E"/>
+                    <navigationItem key="navigationItem" title="FolderName" id="XsT-cx-e4E">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="cck-wa-SHS">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="0X4-s7-2Gf" id="jHF-GX-BdB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="ANa-JP-S9I" kind="show" identifier="showMedia" id="dL2-eE-gpx"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTX-Uj-gkm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1880" y="-237"/>
+        </scene>
+        <!--Media Display View Controller-->
+        <scene sceneID="7jY-Lr-3Tf">
+            <objects>
+                <viewController id="ANa-JP-S9I" customClass="MediaDisplayViewController" customModule="ImageStorage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nQH-HP-Wi6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="flc-fR-lYC">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IXl-Ch-f8w"/>
+                    </view>
+                    <connections>
+                        <outlet property="displayImageView" destination="flc-fR-lYC" id="mzg-Uq-8fj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tky-jq-Kow" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2669.5652173913045" y="-237.05357142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CB1-2F-erP">

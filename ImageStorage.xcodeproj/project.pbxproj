@@ -16,6 +16,7 @@
 		0197905822EB3C510041A7BA /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197905722EB3C510041A7BA /* ImageCollectionViewController.swift */; };
 		0197905A22EB3DFD0041A7BA /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197905922EB3DFD0041A7BA /* ImageCollectionViewCell.swift */; };
 		01B6BF3922EC771D000319D9 /* MediaPickerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B6BF3822EC771D000319D9 /* MediaPickerTableViewController.swift */; };
+		01B6BF3C22EC8707000319D9 /* MediaDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B6BF3B22EC8707000319D9 /* MediaDisplayViewController.swift */; };
 		03A91A977964CE8E15007BC3 /* Pods_ImageStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B24540AFA2A087AE644A5F /* Pods_ImageStorage.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		0197905722EB3C510041A7BA /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
 		0197905922EB3DFD0041A7BA /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		01B6BF3822EC771D000319D9 /* MediaPickerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPickerTableViewController.swift; sourceTree = "<group>"; };
+		01B6BF3B22EC8707000319D9 /* MediaDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDisplayViewController.swift; sourceTree = "<group>"; };
 		20B24540AFA2A087AE644A5F /* Pods_ImageStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E6872ACEEAFD330F76A277D /* Pods-ImageStorage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageStorage.debug.xcconfig"; path = "Target Support Files/Pods-ImageStorage/Pods-ImageStorage.debug.xcconfig"; sourceTree = "<group>"; };
 		4227E79FC170C9B486EF1433 /* Pods-ImageStorage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageStorage.release.xcconfig"; path = "Target Support Files/Pods-ImageStorage/Pods-ImageStorage.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		0197903E22EB19680041A7BA /* ImageStorage */ = {
 			isa = PBXGroup;
 			children = (
+				01B6BF3A22EC86B7000319D9 /* MediaDisplayVC */,
 				01B6BF3622EB60C3000319D9 /* ImageCVC */,
 				01B6BF3522EB60A0000319D9 /* FolderTVC */,
 				01B6BF3722EC76DB000319D9 /* MediaPickerTVC */,
@@ -105,6 +108,14 @@
 				01B6BF3822EC771D000319D9 /* MediaPickerTableViewController.swift */,
 			);
 			path = MediaPickerTVC;
+			sourceTree = "<group>";
+		};
+		01B6BF3A22EC86B7000319D9 /* MediaDisplayVC */ = {
+			isa = PBXGroup;
+			children = (
+				01B6BF3B22EC8707000319D9 /* MediaDisplayViewController.swift */,
+			);
+			path = MediaDisplayVC;
 			sourceTree = "<group>";
 		};
 		30A50501B4CE2035148F666E /* Pods */ = {
@@ -239,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01B6BF3C22EC8707000319D9 /* MediaDisplayViewController.swift in Sources */,
 				0197905822EB3C510041A7BA /* ImageCollectionViewController.swift in Sources */,
 				0197905422EB1ED00041A7BA /* FolderTableViewController.swift in Sources */,
 				01B6BF3922EC771D000319D9 /* MediaPickerTableViewController.swift in Sources */,

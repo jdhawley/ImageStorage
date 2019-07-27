@@ -22,16 +22,16 @@ class MediaPickerTableViewController: UITableViewController {
     var assets = [PHAsset]()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.rowHeight = cellSize.height
+//        super.viewDidLoad()
+//        tableView.dataSource = self
+//        tableView.delegate = self
+//        tableView.rowHeight = cellSize.height
     }
     
     // MARK: - Delegates
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return assets.count
-    }
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return assets.count
+//    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: kCellReuseIdentifier) else {
@@ -62,52 +62,52 @@ class MediaPickerTableViewController: UITableViewController {
         //segue to detail view here
     }
     
-    @IBAction func addButtonPressed(_ sender: Any) {
-        let picker = AssetsPickerViewController()
-        picker.pickerDelegate = self
-        present(picker, animated: true, completion: nil)
-    }
+//    @IBAction func addButtonPressed(_ sender: Any) {
+//        let picker = AssetsPickerViewController()
+//        picker.pickerDelegate = self
+//        present(picker, animated: true, completion: nil)
+//    }
 }
 
-extension MediaPickerTableViewController: AssetsPickerViewControllerDelegate {
-    
-    func assetsPickerCannotAccessPhotoLibrary(controller: AssetsPickerViewController) {
-        logw("Need permission to access photo library.")
-    }
-    
-    func assetsPickerDidCancel(controller: AssetsPickerViewController) {
-        logi("Cancelled.")
-    }
-    
-    func assetsPicker(controller: AssetsPickerViewController, selected assets: [PHAsset]) {
-        self.assets = assets
-        tableView.reloadData()
-    }
-    
-    func assetsPicker(controller: AssetsPickerViewController, shouldSelect asset: PHAsset, at indexPath: IndexPath) -> Bool {
-        logi("shouldSelect: \(indexPath.row)")
-        
-        // can limit selection count
-        if controller.selectedAssets.count > 3 {
-            // do your job here
-        }
-        return true
-    }
-    
-    func assetsPicker(controller: AssetsPickerViewController, didSelect asset: PHAsset, at indexPath: IndexPath) {
-        logi("didSelect: \(indexPath.row)")
-    }
-    
-    func assetsPicker(controller: AssetsPickerViewController, shouldDeselect asset: PHAsset, at indexPath: IndexPath) -> Bool {
-        logi("shouldDeselect: \(indexPath.row)")
-        return true
-    }
-    
-    func assetsPicker(controller: AssetsPickerViewController, didDeselect asset: PHAsset, at indexPath: IndexPath) {
-        logi("didDeselect: \(indexPath.row)")
-    }
-    
-    func assetsPicker(controller: AssetsPickerViewController, didDismissByCancelling byCancel: Bool) {
-        logi("dismiss completed - byCancel: \(byCancel)")
-    }
-}
+//extension MediaPickerTableViewController: AssetsPickerViewControllerDelegate {
+//
+//    func assetsPickerCannotAccessPhotoLibrary(controller: AssetsPickerViewController) {
+//        logw("Need permission to access photo library.")
+//    }
+//
+//    func assetsPickerDidCancel(controller: AssetsPickerViewController) {
+//        logi("Cancelled.")
+//    }
+//
+//    func assetsPicker(controller: AssetsPickerViewController, selected assets: [PHAsset]) {
+//        self.assets = assets
+//        tableView.reloadData()
+//    }
+//
+//    func assetsPicker(controller: AssetsPickerViewController, shouldSelect asset: PHAsset, at indexPath: IndexPath) -> Bool {
+//        logi("shouldSelect: \(indexPath.row)")
+//
+//        // can limit selection count
+//        if controller.selectedAssets.count > 3 {
+//            // do your job here
+//        }
+//        return true
+//    }
+//
+//    func assetsPicker(controller: AssetsPickerViewController, didSelect asset: PHAsset, at indexPath: IndexPath) {
+//        logi("didSelect: \(indexPath.row)")
+//    }
+//
+//    func assetsPicker(controller: AssetsPickerViewController, shouldDeselect asset: PHAsset, at indexPath: IndexPath) -> Bool {
+//        logi("shouldDeselect: \(indexPath.row)")
+//        return true
+//    }
+//
+//    func assetsPicker(controller: AssetsPickerViewController, didDeselect asset: PHAsset, at indexPath: IndexPath) {
+//        logi("didDeselect: \(indexPath.row)")
+//    }
+//
+//    func assetsPicker(controller: AssetsPickerViewController, didDismissByCancelling byCancel: Bool) {
+//        logi("dismiss completed - byCancel: \(byCancel)")
+//    }
+//}
