@@ -51,18 +51,61 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Folders" id="NZG-Ym-8Cx">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="camera" id="hMq-ug-Q1k">
+                            <connections>
+                                <action selector="switchButtonPressed:" destination="9ZD-Fa-1pc" id="IAg-IF-Cn3"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="yYz-fk-s3U">
                             <connections>
                                 <action selector="addButtonPressed:" destination="9ZD-Fa-1pc" id="iiB-xl-edA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="BXq-e4-VBr" kind="show" identifier="showImagePicker" id="vpp-re-YVN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xkg-mX-f1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="844.92753623188412" y="75.669642857142847"/>
+            <point key="canvasLocation" x="904" y="76"/>
         </scene>
-        <!--Image Collection View Controller-->
+        <!--FolderName-->
+        <scene sceneID="BqX-ce-0nf">
+            <objects>
+                <tableViewController id="BXq-e4-VBr" customClass="MediaPickerTableViewController" customModule="ImageStorage" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7lq-pg-JbE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="swc-py-a0y">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="swc-py-a0y" id="Xak-Na-oI8">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BXq-e4-VBr" id="h1o-gh-4BZ"/>
+                            <outlet property="delegate" destination="BXq-e4-VBr" id="MjW-o1-GmW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="FolderName" id="AM1-Cd-SS4">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="10G-MN-kvS">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="BXq-e4-VBr" id="B4V-EC-n5H"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OQy-9C-Dfw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1880" y="412"/>
+        </scene>
+        <!--FolderName-->
         <scene sceneID="9YJ-TU-fdd">
             <objects>
                 <collectionViewController id="0X4-s7-2Gf" customClass="ImageCollectionViewController" customModule="ImageStorage" customModuleProvider="target" sceneMemberID="viewController">
@@ -106,10 +149,11 @@
                             <outlet property="delegate" destination="0X4-s7-2Gf" id="hmT-YH-mCM"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" title="FolderName" id="XsT-cx-e4E"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTX-Uj-gkm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1677" y="76"/>
+            <point key="canvasLocation" x="1880" y="-237"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CB1-2F-erP">

@@ -15,7 +15,8 @@ class FolderTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        //Uncomment the line below to restore normal editing functionality
+//        self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -59,9 +60,15 @@ class FolderTableViewController: UITableViewController {
         case "showImageCollection":
             let destination = segue.destination as! ImageCollectionViewController
             destination.navigationItem.title = folders[row!] + " Gallery"
+        case "showImagePicker":
+            return
         default:
             return
         }
     }
 
+    @IBAction func switchButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "showImagePicker", sender: self)
+    }
+    
 }
