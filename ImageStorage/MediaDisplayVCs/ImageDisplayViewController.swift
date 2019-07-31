@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MediaDisplayViewController: UIViewController {
+class ImageDisplayViewController: UIViewController {
     var image: UIImage?
     
     @IBOutlet weak var displayImageView: UIImageView!
