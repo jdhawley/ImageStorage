@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		010B30C622EDBF4200DE512E /* VideoDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B30C522EDBF4200DE512E /* VideoDisplayViewController.swift */; };
 		016EC00122F76C2C00645A96 /* PHAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016EC00022F76C2C00645A96 /* PHAsset.swift */; };
 		0197904022EB19680041A7BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197903F22EB19680041A7BA /* AppDelegate.swift */; };
 		0197904522EB19680041A7BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0197904322EB19680041A7BA /* Main.storyboard */; };
@@ -22,7 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		010B30C522EDBF4200DE512E /* VideoDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDisplayViewController.swift; sourceTree = "<group>"; };
 		016EC00022F76C2C00645A96 /* PHAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHAsset.swift; sourceTree = "<group>"; };
 		0197903C22EB19680041A7BA /* ImageStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0197903F22EB19680041A7BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				01B6BF3B22EC8707000319D9 /* ImageDisplayViewController.swift */,
-				010B30C522EDBF4200DE512E /* VideoDisplayViewController.swift */,
 			);
 			path = MediaDisplayVCs;
 			sourceTree = "<group>";
@@ -254,7 +251,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				016EC00122F76C2C00645A96 /* PHAsset.swift in Sources */,
-				010B30C622EDBF4200DE512E /* VideoDisplayViewController.swift in Sources */,
 				01B6BF3C22EC8707000319D9 /* ImageDisplayViewController.swift in Sources */,
 				0197905822EB3C510041A7BA /* ImageCollectionViewController.swift in Sources */,
 				0197905422EB1ED00041A7BA /* FolderTableViewController.swift in Sources */,
