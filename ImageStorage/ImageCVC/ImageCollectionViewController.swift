@@ -60,14 +60,12 @@ class ImageCollectionViewController: UICollectionViewController, UICollectionVie
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedItem = assets[indexPath.item]
+        
         switch selectedItem!.mediaType{
         case PHAssetMediaType.image:
             performSegue(withIdentifier: "showImage", sender: self)
         case PHAssetMediaType.video:
-            print("Playing a video")
-//            performSegue(withIdentifier: "showVideo", sender: self)
-//            PHCachingImageManager.requestAVAsset(<#T##self: PHCachingImageManager##PHCachingImageManager#>)
-//            let player = AVPlayer(url: asset.URL)
+            playVideo(video: selectedItem!)
         default:
             fatalError("Unrecognized PHAssetMediaType")
         }
@@ -80,9 +78,6 @@ class ImageCollectionViewController: UICollectionViewController, UICollectionVie
             let size = view.frame.size
             let image = getImageFromPHAsset(selectedItem!, size: size, deliverMode: .highQualityFormat)
             destination.image = image
-        case "showVideo":
-            let destination = segue.destination as! VideoDisplayViewController
-            destination.asset = selectedItem
         default:
             fatalError("Unknown segue identifier: \(String(describing: segue.identifier))")
         }
@@ -129,6 +124,23 @@ class ImageCollectionViewController: UICollectionViewController, UICollectionVie
         }
         
         return returnImage
+    }
+    
+    private func playVideo(video: PHAsset){
+        video.getURL(completionHandler: { (url) in
+            
+            print(url)
+            
+            if let videoUrl = url{
+                let player = AVPlayer(url: videoUrl)
+                let vc = AVPlayerViewController()
+                vc.player = player
+                
+                self.present(vc, animated: true) {
+                    vc.player?.play()
+                }
+            }
+        })
     }
 }
 

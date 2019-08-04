@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		010B30C622EDBF4200DE512E /* VideoDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B30C522EDBF4200DE512E /* VideoDisplayViewController.swift */; };
+		016EC00122F76C2C00645A96 /* PHAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016EC00022F76C2C00645A96 /* PHAsset.swift */; };
 		0197904022EB19680041A7BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197903F22EB19680041A7BA /* AppDelegate.swift */; };
 		0197904522EB19680041A7BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0197904322EB19680041A7BA /* Main.storyboard */; };
 		0197904722EB19690041A7BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0197904622EB19690041A7BA /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		010B30C522EDBF4200DE512E /* VideoDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDisplayViewController.swift; sourceTree = "<group>"; };
+		016EC00022F76C2C00645A96 /* PHAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHAsset.swift; sourceTree = "<group>"; };
 		0197903C22EB19680041A7BA /* ImageStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0197903F22EB19680041A7BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0197904422EB19680041A7BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		016EBFFF22F76C1000645A96 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				016EC00022F76C2C00645A96 /* PHAsset.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		0197903322EB19680041A7BA = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +84,7 @@
 				01B6BF3A22EC86B7000319D9 /* MediaDisplayVCs */,
 				01B6BF3622EB60C3000319D9 /* ImageCVC */,
 				01B6BF3522EB60A0000319D9 /* FolderTVC */,
+				016EBFFF22F76C1000645A96 /* Extensions */,
 				0197903F22EB19680041A7BA /* AppDelegate.swift */,
 				0197904322EB19680041A7BA /* Main.storyboard */,
 				0197904622EB19690041A7BA /* Assets.xcassets */,
@@ -242,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				016EC00122F76C2C00645A96 /* PHAsset.swift in Sources */,
 				010B30C622EDBF4200DE512E /* VideoDisplayViewController.swift in Sources */,
 				01B6BF3C22EC8707000319D9 /* ImageDisplayViewController.swift in Sources */,
 				0197905822EB3C510041A7BA /* ImageCollectionViewController.swift in Sources */,
