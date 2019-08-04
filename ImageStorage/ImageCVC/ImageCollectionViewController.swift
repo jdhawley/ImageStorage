@@ -88,9 +88,15 @@ class ImageCollectionViewController: UICollectionViewController, UICollectionVie
         }
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let numberOfItemsPerRow:CGFloat = 4
+        let numberOfItemsPerRow:CGFloat = UIDevice.current.orientation.isPortrait ? 4 : 7
         let spacingBetweenCells:CGFloat = 2
         
         let totalSpacing = (numberOfItemsPerRow - 1) * spacingBetweenCells //Amount of total spacing in a row
