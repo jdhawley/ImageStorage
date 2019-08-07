@@ -17,6 +17,7 @@
 		0197905822EB3C510041A7BA /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197905722EB3C510041A7BA /* ImageCollectionViewController.swift */; };
 		0197905A22EB3DFD0041A7BA /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197905922EB3DFD0041A7BA /* ImageCollectionViewCell.swift */; };
 		01B6BF3C22EC8707000319D9 /* ImageDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B6BF3B22EC8707000319D9 /* ImageDisplayViewController.swift */; };
+		01CD9C0022F9DCD900A35814 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD9BFF22F9DCD900A35814 /* UIView.swift */; };
 		03A91A977964CE8E15007BC3 /* Pods_ImageStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B24540AFA2A087AE644A5F /* Pods_ImageStorage.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		0197905722EB3C510041A7BA /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
 		0197905922EB3DFD0041A7BA /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		01B6BF3B22EC8707000319D9 /* ImageDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayViewController.swift; sourceTree = "<group>"; };
+		01CD9BFF22F9DCD900A35814 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		20B24540AFA2A087AE644A5F /* Pods_ImageStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E6872ACEEAFD330F76A277D /* Pods-ImageStorage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageStorage.debug.xcconfig"; path = "Target Support Files/Pods-ImageStorage/Pods-ImageStorage.debug.xcconfig"; sourceTree = "<group>"; };
 		4227E79FC170C9B486EF1433 /* Pods-ImageStorage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageStorage.release.xcconfig"; path = "Target Support Files/Pods-ImageStorage/Pods-ImageStorage.release.xcconfig"; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				016EC00022F76C2C00645A96 /* PHAsset.swift */,
+				01CD9BFF22F9DCD900A35814 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01CD9C0022F9DCD900A35814 /* UIView.swift in Sources */,
 				016EC00122F76C2C00645A96 /* PHAsset.swift in Sources */,
 				01B6BF3C22EC8707000319D9 /* ImageDisplayViewController.swift in Sources */,
 				0197905822EB3C510041A7BA /* ImageCollectionViewController.swift in Sources */,

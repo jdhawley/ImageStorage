@@ -14,28 +14,22 @@ import AVKit
 private let reuseIdentifier = "imageCell"
 
 class ImageCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-//    var imageNames = [String]()
     var assets = [PHAsset]()
+    var selectedItem: PHAsset?
     lazy var imageManager = {
         return PHCachingImageManager()
     }()
-    var selectedItem: PHAsset?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-//        loadImages()
     }
 
     // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return assets.count
     }
 
@@ -55,6 +49,12 @@ class ImageCollectionViewController: UICollectionViewController, UICollectionVie
             cvCell.myImageView?.image = image
             cvCell.setNeedsLayout()
             cvCell.layoutIfNeeded()
+        }
+        
+        if asset.mediaType == .video{
+            print("Video media type")
+            cvCell.videoTimeLabel.text = "0:00"
+            cvCell.gradientView.setGradientBackground(colorOne: UIColor.clear, colorTwo: UIColor(alpha: 0.5, red: 0, green: 0, blue: 0))
         }
     }
     
@@ -129,8 +129,6 @@ class ImageCollectionViewController: UICollectionViewController, UICollectionVie
     private func playVideo(video: PHAsset){
         video.getURL(completionHandler: { (url) in
             
-            print(url)
-            
             if let videoUrl = url{
                 let player = AVPlayer(url: videoUrl)
                 let vc = AVPlayerViewController()
@@ -161,11 +159,6 @@ extension ImageCollectionViewController: AssetsPickerViewControllerDelegate {
     
     func assetsPicker(controller: AssetsPickerViewController, shouldSelect asset: PHAsset, at indexPath: IndexPath) -> Bool {
         logi("shouldSelect: \(indexPath.row)")
-        
-        // can limit selection count
-        if controller.selectedAssets.count > 3 {
-            // do your job here
-        }
         return true
     }
     
