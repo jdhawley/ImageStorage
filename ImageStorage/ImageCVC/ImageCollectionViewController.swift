@@ -53,7 +53,7 @@ class ImageCollectionViewController: UICollectionViewController, UICollectionVie
         
         if asset.mediaType == .video{
             print("Video media type")
-            cvCell.videoTimeLabel.text = "0:00"
+            cvCell.videoTimeLabel.text = asset.duration.convertToFormattedString()
             cvCell.gradientView.setGradientBackground(colorOne: UIColor.clear, colorTwo: UIColor(alpha: 0.5, red: 0, green: 0, blue: 0))
         }
     }

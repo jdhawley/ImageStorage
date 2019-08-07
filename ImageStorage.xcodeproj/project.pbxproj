@@ -16,6 +16,7 @@
 		0197905422EB1ED00041A7BA /* FolderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197905322EB1ED00041A7BA /* FolderTableViewController.swift */; };
 		0197905822EB3C510041A7BA /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197905722EB3C510041A7BA /* ImageCollectionViewController.swift */; };
 		0197905A22EB3DFD0041A7BA /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197905922EB3DFD0041A7BA /* ImageCollectionViewCell.swift */; };
+		01A47BC922FB4EA200DE94A7 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A47BC822FB4EA200DE94A7 /* TimeInterval.swift */; };
 		01B6BF3C22EC8707000319D9 /* ImageDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B6BF3B22EC8707000319D9 /* ImageDisplayViewController.swift */; };
 		01CD9C0022F9DCD900A35814 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD9BFF22F9DCD900A35814 /* UIView.swift */; };
 		03A91A977964CE8E15007BC3 /* Pods_ImageStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B24540AFA2A087AE644A5F /* Pods_ImageStorage.framework */; };
@@ -33,6 +34,7 @@
 		0197905322EB1ED00041A7BA /* FolderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderTableViewController.swift; sourceTree = "<group>"; };
 		0197905722EB3C510041A7BA /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
 		0197905922EB3DFD0041A7BA /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		01A47BC822FB4EA200DE94A7 /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 		01B6BF3B22EC8707000319D9 /* ImageDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayViewController.swift; sourceTree = "<group>"; };
 		01CD9BFF22F9DCD900A35814 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		20B24540AFA2A087AE644A5F /* Pods_ImageStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +59,7 @@
 			children = (
 				016EC00022F76C2C00645A96 /* PHAsset.swift */,
 				01CD9BFF22F9DCD900A35814 /* UIView.swift */,
+				01A47BC822FB4EA200DE94A7 /* TimeInterval.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01CD9C0022F9DCD900A35814 /* UIView.swift in Sources */,
+				01A47BC922FB4EA200DE94A7 /* TimeInterval.swift in Sources */,
 				016EC00122F76C2C00645A96 /* PHAsset.swift in Sources */,
 				01B6BF3C22EC8707000319D9 /* ImageDisplayViewController.swift in Sources */,
 				0197905822EB3C510041A7BA /* ImageCollectionViewController.swift in Sources */,
