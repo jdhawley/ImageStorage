@@ -7,16 +7,21 @@
 //
 
 import UIKit
+import CoreData
 
 class FolderTableViewController: UITableViewController {
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
-    var folders = ["First Folder", "Second Folder", "Third Folder"]
+    var folders = [Folder]() //["First Folder", "Second Folder", "Third Folder"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadFolders()
 
         //Uncomment the line below to restore normal editing functionality
-//        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -32,7 +37,7 @@ class FolderTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "folderCell", for: indexPath) as! FolderTableViewCell
 
-        cell.folderLabel.text = folders[indexPath.row]
+        cell.folderLabel.text = folders[indexPath.row].folderName
 
         return cell
     }
@@ -45,21 +50,29 @@ class FolderTableViewController: UITableViewController {
         }
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
-            let newIndexPath = IndexPath(row: self.folders.count, section: 0)
-            self.folders.append(alert.textFields![0].text!)
-            self.tableView.insertRows(at: [newIndexPath], with: .automatic)
+            guard let folderName = alert.textFields![0].text else {
+                fatalError("Failed to retrieve folder name from text field")
+            }
+            
+            let folder = Folder(context: self.context)
+            folder.folderName = folderName
+            
+            self.folders.append(folder)
+            self.saveContext()
         }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let row = tableView.indexPathForSelectedRow?.row
+        guard let row = tableView.indexPathForSelectedRow?.row else{ fatalError() }
         
         switch segue.identifier{
         case "showImageCollection":
             let destination = segue.destination as! ImageCollectionViewController
-            destination.navigationItem.title = folders[row!] + " Gallery"
+            destination.navigationItem.title = folders[row].folderName
         case "showImagePicker":
             return
         default:
@@ -71,4 +84,23 @@ class FolderTableViewController: UITableViewController {
         performSegue(withIdentifier: "showImagePicker", sender: self)
     }
     
+    private func loadFolders(){
+        let request: NSFetchRequest<Folder> = Folder.fetchRequest()
+        
+        do{
+            folders = try context.fetch(request)
+        } catch{
+            print("Error fetching folders: \(error)")
+        }
+    }
+    
+    private func saveContext(){
+        do{
+            try context.save()
+        } catch{
+            print("Error saving context: \(error)")
+        }
+        
+        tableView.reloadData()
+    }
 }
