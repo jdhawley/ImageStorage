@@ -17,6 +17,7 @@ private let reuseIdentifier = "imageCell"
 class ImageCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    var parentFolder: Folder?
     var assets = [PHAsset]()
     var selectedItem: PHAsset?
     lazy var imageManager = {
@@ -146,14 +147,14 @@ class ImageCollectionViewController: UICollectionViewController, UICollectionVie
     }
     
     private func loadMedia(withRequest request: NSFetchRequest<Image> = Image.fetchRequest()){
-        var identifiers = [String]()
         
+        if let folder = parentFolder{
+            request.predicate = NSPredicate(format: "ANY folder.folderName == %@", folder.folderName!)
+        }
+        
+        var identifiers = [String]()
         do{
-            
-            
             for loadedAsset in try context.fetch(request){
-//                context.delete(loadedAsset)
-//                saveContext()
                 guard let identifier = loadedAsset.imageIdentifier else{
                     fatalError("Image has null imageIdentifier")
                 }
@@ -200,6 +201,7 @@ extension ImageCollectionViewController: AssetsPickerViewControllerDelegate {
         for asset in assets{
             let image = Image(context: context)
             image.imageIdentifier = asset.localIdentifier
+            image.folder = parentFolder
             self.assets.append(asset)
         }
         saveContext()

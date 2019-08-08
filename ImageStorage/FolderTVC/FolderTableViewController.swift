@@ -89,6 +89,7 @@ class FolderTableViewController: UITableViewController {
         case "showImageCollection":
             let destination = segue.destination as! ImageCollectionViewController
             destination.navigationItem.title = folders[row].folderName
+            destination.parentFolder = folders[row]
         default:
             return
         }
