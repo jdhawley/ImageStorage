@@ -13,7 +13,7 @@ class FolderTableViewController: UITableViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
-    var folders = [Folder]() //["First Folder", "Second Folder", "Third Folder"]
+    var folders = [Folder]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +36,25 @@ class FolderTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "folderCell", for: indexPath) as! FolderTableViewCell
+        
+        let index = indexPath.row
 
         cell.folderLabel.text = folders[indexPath.row].folderName
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            let index = indexPath.row
+            let myFolders = folders
+            
+            context.delete(folders[indexPath.row])
+            folders.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            saveContext()
+        }
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
@@ -59,6 +74,7 @@ class FolderTableViewController: UITableViewController {
             
             self.folders.append(folder)
             self.saveContext()
+            self.tableView.reloadData()
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -73,15 +89,9 @@ class FolderTableViewController: UITableViewController {
         case "showImageCollection":
             let destination = segue.destination as! ImageCollectionViewController
             destination.navigationItem.title = folders[row].folderName
-        case "showImagePicker":
-            return
         default:
             return
         }
-    }
-
-    @IBAction func switchButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "showImagePicker", sender: self)
     }
     
     private func loadFolders(){
@@ -100,7 +110,5 @@ class FolderTableViewController: UITableViewController {
         } catch{
             print("Error saving context: \(error)")
         }
-        
-        tableView.reloadData()
     }
 }
