@@ -17,6 +17,8 @@
 		0197905822EB3C510041A7BA /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197905722EB3C510041A7BA /* ImageCollectionViewController.swift */; };
 		0197905A22EB3DFD0041A7BA /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0197905922EB3DFD0041A7BA /* ImageCollectionViewCell.swift */; };
 		01A47BC922FB4EA200DE94A7 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A47BC822FB4EA200DE94A7 /* TimeInterval.swift */; };
+		01A47BCC22FBB13A00DE94A7 /* ImageStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01A47BCA22FBB13A00DE94A7 /* ImageStorage.xcdatamodeld */; };
+		01A47BCE22FBBE3C00DE94A7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A47BCD22FBBE3C00DE94A7 /* UIImage.swift */; };
 		01B6BF3C22EC8707000319D9 /* ImageDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B6BF3B22EC8707000319D9 /* ImageDisplayViewController.swift */; };
 		01CD9C0022F9DCD900A35814 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD9BFF22F9DCD900A35814 /* UIView.swift */; };
 		03A91A977964CE8E15007BC3 /* Pods_ImageStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B24540AFA2A087AE644A5F /* Pods_ImageStorage.framework */; };
@@ -35,6 +37,8 @@
 		0197905722EB3C510041A7BA /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
 		0197905922EB3DFD0041A7BA /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		01A47BC822FB4EA200DE94A7 /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
+		01A47BCB22FBB13A00DE94A7 /* ImageStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ImageStorage.xcdatamodel; sourceTree = "<group>"; };
+		01A47BCD22FBBE3C00DE94A7 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		01B6BF3B22EC8707000319D9 /* ImageDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayViewController.swift; sourceTree = "<group>"; };
 		01CD9BFF22F9DCD900A35814 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		20B24540AFA2A087AE644A5F /* Pods_ImageStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +64,7 @@
 				016EC00022F76C2C00645A96 /* PHAsset.swift */,
 				01CD9BFF22F9DCD900A35814 /* UIView.swift */,
 				01A47BC822FB4EA200DE94A7 /* TimeInterval.swift */,
+				01A47BCD22FBBE3C00DE94A7 /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -90,6 +95,7 @@
 				01B6BF3522EB60A0000319D9 /* FolderTVC */,
 				016EBFFF22F76C1000645A96 /* Extensions */,
 				0197903F22EB19680041A7BA /* AppDelegate.swift */,
+				01A47BCA22FBB13A00DE94A7 /* ImageStorage.xcdatamodeld */,
 				0197904322EB19680041A7BA /* Main.storyboard */,
 				0197904622EB19690041A7BA /* Assets.xcassets */,
 				0197904822EB19690041A7BA /* LaunchScreen.storyboard */,
@@ -257,12 +263,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				01CD9C0022F9DCD900A35814 /* UIView.swift in Sources */,
+				01A47BCE22FBBE3C00DE94A7 /* UIImage.swift in Sources */,
 				01A47BC922FB4EA200DE94A7 /* TimeInterval.swift in Sources */,
 				016EC00122F76C2C00645A96 /* PHAsset.swift in Sources */,
 				01B6BF3C22EC8707000319D9 /* ImageDisplayViewController.swift in Sources */,
 				0197905822EB3C510041A7BA /* ImageCollectionViewController.swift in Sources */,
 				0197905422EB1ED00041A7BA /* FolderTableViewController.swift in Sources */,
 				0197905A22EB3DFD0041A7BA /* ImageCollectionViewCell.swift in Sources */,
+				01A47BCC22FBB13A00DE94A7 /* ImageStorage.xcdatamodeld in Sources */,
 				0197904022EB19680041A7BA /* AppDelegate.swift in Sources */,
 				0197905222EB1C200041A7BA /* FolderTableViewCell.swift in Sources */,
 			);
@@ -466,6 +474,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		01A47BCA22FBB13A00DE94A7 /* ImageStorage.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				01A47BCB22FBB13A00DE94A7 /* ImageStorage.xcdatamodel */,
+			);
+			currentVersion = 01A47BCB22FBB13A00DE94A7 /* ImageStorage.xcdatamodel */;
+			path = ImageStorage.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0197903422EB19680041A7BA /* Project object */;
 }

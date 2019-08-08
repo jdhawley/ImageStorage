@@ -10,10 +10,13 @@ import UIKit
 import Photos
 import AssetsPickerViewController
 import AVKit
+import CoreData
 
 private let reuseIdentifier = "imageCell"
 
 class ImageCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     var assets = [PHAsset]()
     var selectedItem: PHAsset?
     lazy var imageManager = {
@@ -22,6 +25,8 @@ class ImageCollectionViewController: UICollectionViewController, UICollectionVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadMedia()
     }
 
     // MARK: UICollectionViewDataSource
@@ -52,7 +57,6 @@ class ImageCollectionViewController: UICollectionViewController, UICollectionVie
         }
         
         if asset.mediaType == .video{
-            print("Video media type")
             cvCell.videoTimeLabel.text = asset.duration.convertToFormattedString()
             cvCell.gradientView.setGradientBackground(colorOne: UIColor.clear, colorTwo: UIColor(alpha: 0.5, red: 0, green: 0, blue: 0))
         }
@@ -140,6 +144,41 @@ class ImageCollectionViewController: UICollectionViewController, UICollectionVie
             }
         })
     }
+    
+    private func loadMedia(withRequest request: NSFetchRequest<Image> = Image.fetchRequest()){
+        var identifiers = [String]()
+        
+        do{
+            
+            
+            for loadedAsset in try context.fetch(request){
+//                context.delete(loadedAsset)
+//                saveContext()
+                guard let identifier = loadedAsset.imageIdentifier else{
+                    fatalError("Image has null imageIdentifier")
+                }
+
+                identifiers.append(identifier)
+            }
+        }catch{
+            print("Error loading data from database: \(error)")
+        }
+        
+        let loadedAssets = PHAsset.fetchAssets(withLocalIdentifiers: identifiers, options: nil)
+        for i in 0..<(loadedAssets.count) {
+            assets.append(loadedAssets[i])
+        }
+    }
+    
+    private func saveContext(){
+        do{
+            try context.save()
+        } catch{
+            print("Error saving content: \(error)")
+        }
+        
+        collectionView.reloadData()
+    }
 }
 
 extension ImageCollectionViewController: AssetsPickerViewControllerDelegate {
@@ -153,7 +192,17 @@ extension ImageCollectionViewController: AssetsPickerViewControllerDelegate {
     }
     
     func assetsPicker(controller: AssetsPickerViewController, selected assets: [PHAsset]) {
-        self.assets = assets
+        let options = PHImageRequestOptions()
+        options.deliveryMode = .highQualityFormat
+        options.isNetworkAccessAllowed = true
+        options.isSynchronous = true    //TODO: Make this process asynchronous
+        
+        for asset in assets{
+            let image = Image(context: context)
+            image.imageIdentifier = asset.localIdentifier
+            self.assets.append(asset)
+        }
+        saveContext()
         collectionView.reloadData()
     }
     
